@@ -7,6 +7,11 @@ async function get_IP_on_submit() {
   document.getElementById('location').innerHTML = data.region + "/" + data.country;
   document.getElementById('timeZone').innerHTML = data.timezone
   document.getElementById('isp').innerHTML = data.org
+
+  var container = L.DomUtil.get('map');
+  if (container != null) {
+    container._leaflet_id = null;
+  }
   const map = L.map('map', {
     center: [data.latitude, data.longitude],
     zoom: 13
