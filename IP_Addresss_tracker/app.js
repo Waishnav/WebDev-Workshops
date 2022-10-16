@@ -7,12 +7,7 @@ async function get_IP_on_submit() {
   document.getElementById('location').innerHTML = data.region + "/" + data.country;
   document.getElementById('timeZone').innerHTML = data.timezone
   document.getElementById('isp').innerHTML = data.org
-  console.log(map)
-  if (map != undefined) {
-    map.off()
-    map.remove()
-  }
-  var map = new L.map('map', {
+  const map = L.map('map', {
     center: [data.latitude, data.longitude],
     zoom: 13
   });
@@ -23,14 +18,6 @@ async function get_IP_on_submit() {
 
 }
 
-/*
-const user_ip = async () => {
-  const response = await fetch("https://api.db-ip.com/v2/free/self")
-  const data = await response.json()
-  return data.ipAddress
-}
-*/
-
 async function get_user_ip() {
   const response = await fetch('https://api.db-ip.com/v2/free/self')
   const data = await response.json()
@@ -40,3 +27,9 @@ async function get_user_ip() {
 
 Promise.resolve(get_user_ip())
 get_IP_on_submit()
+
+document.getElementById('user_input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    get_IP_on_submit()
+  }
+});
