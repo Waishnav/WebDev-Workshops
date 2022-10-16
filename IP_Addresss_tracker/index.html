@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+
+</head>
+
+<body style="margin:auto; font-family: Poppins">
+  <div class="p-10 flex-col text-center bg-gradient-to-r from-purple-500 to-pink-500">
+    <h1 class="m-10 font-bold text-2xl">IP Address Tracker</h1>
+    <div class="flex-row gap-0">
+      <input class="border-2 p-2" id="user_input" type="" placeholder="Search for any IP Address or domain" name=""
+        value="">
+      <button class="bg-slate-800 p-3" type="" onclick="get_IP_on_submit()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+          <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex rounded-lg bg-white border-r-10 mt-10 justify-around p-12 display_everything">
+      <div>
+        <h2><b>IP ADDRESS</b></h2>
+        <div class="mt-4" id="ipAddress"></div>
+      </div>
+      <div>
+        <h2><b>LOCATION</b></h2>
+        <div class="mt-4" id="location"></div>
+
+      </div>
+      <div>
+        <h2><b>TIMEZONE</b></h2>
+        <div class="mt-4" id="timeZone"></div>
+      </div>
+      <div>
+        <h2><b>ISP</b></h2>
+        <div class="mt-4" id="isp"></div>
+      </div>
+    </div>
+  </div>
+  <div class="h-[22rem] w-[100%] m-auto" id="map"></div>
+</body>
+
+</html>
