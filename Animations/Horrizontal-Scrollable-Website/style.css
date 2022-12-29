@@ -1,0 +1,111 @@
+body, no-select {
+  -webkit-user-select: none;  /* Safari */
+  -moz-user-select: none;  /* Firefox */
+  -ms-user-select: none;  /* Internet Explorer */
+  user-select: none;  /* Standard syntax */
+}
+
+
+
+.container {
+  overflow-x: scroll;
+  /* scroll-behavior: instant; */
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  /* white-space: nowrap; */
+  overflow-y: hidden;
+  overflow: hidden;
+  user-select: none;
+   cursor: circle;
+}
+
+.item {
+  height: 45rem;
+  width: 90rem;
+  display: flex;
+  margin: 5rem;
+}
+
+.container > :nth-child(1) {
+  background: linear-gradient(0deg, black, rgba(0, 0, 0, 0)),
+    url(/assets/noise.svg);
+}
+.container > :nth-child(3) {
+  background: linear-gradient(0deg, #fdcf17, rgba(255, 119, 0, 0.1)),
+    url(/assets/noise.svg);
+}
+.container > :nth-child(2) {
+  background-color: skyblue;
+  background: linear-gradient(0deg, rgba(24, 46, 78, 0.8), skyblue),
+    url(/assets/noise.svg);
+  isolation: isolate;
+}
+
+.container > :last-child {
+  background: linear-gradient(0deg, lightcoral, rgba(255, 211, 211, 0.8)),
+    url(/assets/noise.svg);
+}
+
+.card-image {
+  display: inline-block;
+  margin: auto;
+  height: 33rem;
+  margin: 3rem;
+  border: 3rem solid white;
+  user-select: none;
+}
+.card-text {
+  display: inline-block;
+  color: white;
+  margin: 4rem;
+  margin-right: 6rem;
+}
+
+.card-text h1 {
+  font-size: 4rem;
+  width: 400px;
+}
+.card-text p {
+  font-size: 1.5rem;
+  color: rgb(205, 205, 205);
+}
+
+.noise {
+  filter: contrast(125%) brightness(650%) invert(100%);
+  mix-blend-mode: color-dodge;
+}
+
+
+
+
+/* media query for small screen devices */
+@media screen and (max-width: 480px) {
+  .item {
+    height: 19rem;
+    width: 40rem;
+    display: flex;
+    margin: 5rem;
+  }
+  .card-image {
+    margin: auto;
+    height: 15rem;
+    margin: 1rem;
+    border: 1rem solid white;
+  }
+  .card-text h1 {
+  font-size: 1.5rem;
+  width: 240px;
+  }
+  .card-text p {
+  font-size: 0.6rem;
+  width: 200px;
+  }
+
+}
+.card-image {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none !important;
+}
